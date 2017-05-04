@@ -1,0 +1,72 @@
+﻿<div class="row">
+    <div class="col-md-6 col-sm-6" ng-show="model.loginUrl">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="logo-position"></div>
+                <form name="form" method="post" action="{{model.loginUrl}}">
+                    <anti-forgery-token token="model.antiForgery"></anti-forgery-token>
+                    <input type="hidden" ng-value="currentLanguage" name="com.uis.userLanguage"/>
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="username">{{ 'userName' | translate }}</label>
+                            <input required name="username" autofocus id="username" type="text" class="form-control" placeholder="{{ 'userName' | translate }}" ng-model="model.username" maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">{{ 'userPassword' | translate }}</label>
+                            <input required id="password" name="password" type="password" class="form-control" placeholder="{{ 'userPassword' | translate }}" ng-model="model.password" maxlength="100" autocomplete="off" focus-if="model.username">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary">{{ 'login' | translate }}</button>
+                        </div>
+                        <div class="alert alert-danger" ng-show="model.errorMessage && model.errorMessage[0] != '!'">
+                            <strong>{{ 'error' | translate }}</strong>
+                            {{model.errorMessage | translate}}
+                        </div>
+                        <div class="alert alert-success" ng-show="model.errorMessage && model.errorMessage[0] == '!'">
+                            {{model.errorMessage.substr(1) | translate}}
+                        </div>
+                        <div class="form-group login-remember" ng-show="model.allowRememberMe">
+                            <label for="rememberMe">
+                                <input type="checkbox" id="rememberMe" name="rememberMe" ng-model="model.rememberMe" value="true">
+                                <strong>{{ 'rememberLogin' | translate }}</strong>
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="pull-right">
+                    <div class="">
+                        <ul class="list-unstyled" style="margin-left:0px;">
+                            <li><a id="passwordForgottenLink" ng-class="{'invalidlink' : model.username == '' || model.username == null }" >{{'linkPassword' | translate}}</a></li>
+                            <li ng-repeat="link in model.additionalLinks"><a ng-href="{{link.href}}"></a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link" style="padding-left:0px;" data-toggle="dropdown"><img ng-src="/content/language-flags/{{currentLanguage}}.png" />&nbsp;{{languages[currentLanguage]._LanguageName}}</button>
+                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="(key,ln) in languages" ng-click="setLanguage(key);"><a href="#"><img ng-src="/content/language-flags/{{key}}.png" /> {{ln._LanguageName}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-sm-6 external-providers" ng-show="model.externalProviders.length">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">External Login</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-inline">
+                    <li ng-repeat="provider in model.externalProviders">
+                        <a class="btn btn-default" href="{{provider.href}}">{{provider.text}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

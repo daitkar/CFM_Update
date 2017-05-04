@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js" data-ng-app="cfmPortal"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js" data-ng-app="cfmPortal"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" data-ng-app="cfmPortal" ng-cloak>
+<!--<![endif]-->
+
+<head>
+    <title data-ng-bind="'CFM Portal | ' + $state.current.data.pageTitle">@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+
+    <link id="ng_load_plugins_before" />
+
+    <link href="/assets/global/css/components.min.css" id="style_components" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/css/components-rounded.min.css" rel="stylesheet" id="style_components" type="text/css">
+    <link href="/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/layouts/layout/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="/assets/layouts/layout/css/custom.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME STYLES -->
+    @if (IsSectionDefined("header"))
+    {
+        @RenderSection("header")
+    }
+
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+
+<body ng-controller="@ViewBag.ControllerName" class="@ViewBag.BaseClasses" ng-class="{'page-content-white': settings.layout.pageContentWhite,'page-container-bg-solid': settings.layout.pageBodySolid, 'page-sidebar-closed': settings.layout.pageSidebarClosed}">
+
+    @RenderBody()
+
+    <script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE JQUERY PLUGINS -->
+    <!-- BEGIN CORE ANGULARJS PLUGINS -->
+    <script src="/assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/angularjs/angular-sanitize.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/angularjs/angular-touch.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/angularjs/plugins/angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+    <script src="/Scripts/angularJsOAuth2.js"></script>
+    <script src="/Scripts/angular-route.min.js"></script>
+    <script src="/Scripts/angular-md5.min.js"></script>
+    <script src="../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../assets/pages/scripts/ui-modals.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js" type="text/javascript"></script>
+    <!-- END CORE ANGULARJS PLUGINS -->
+    <!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
+    <script src="~/js/app.js"></script>
+
+    <script src="~/js/src/core/core.module.js"></script>
+
+    <script src="~/js/src/core/notification/notification.module.js"></script>
+    <script src="~/js/src/core/notification/controllers/notificationController.js"></script>
+    <script src="~/js/src/core/notification/services/notificationService.js"></script>
+
+    <script src="~/js/src/core/menu/menu.module.js"></script>
+    <script src="~/js/src/core/menu/controllers/menuController.js"></script>
+    <script src="~/js/src/core/menu/services/menuService.js"></script>
+
+    <script src="~/js/src/components/components.module.js"></script>
+    <script src="~/js/src/components/dashboard/dashboard.module.js"></script>
+    <script src="~/js/src/components/datacollection/dataCollection.module.js"></script>
+    <script src="~/js/src/components/home/home.module.js"></script>
+    <script src="~/js/src/components/lockscreen/lockScreen.module.js"></script>
+    <script src="~/js/src/components/logout/logout.module.js"></script>
+    <script src="~/js/src/components/marketing/marketing.module.js"></script>
+    <script src="~/js/src/components/myportals/myPortals.module.js"></script>
+    <script src="~/js/src/components/myprofile/myProfile.module.js"></script>
+    <script src="~/js/src/components/mysettings/mySettings.module.js"></script>
+    <script src="~/js/src/components/reportautomation/reportAutomation.module.js"></script>
+    <script src="~/js/src/components/systemhelp/systemHelp.module.js"></script>
+
+    <script src="~/js/src/components/home/controllers/homeController.js"></script>
+    <script src="~/js/src/components/datacollection/controllers/dataCollectionController.js"></script>
+    <script src="~/js/src/components/marketing/controllers/marketingController.js"></script>
+    <script src="~/js/src/components/reportautomation/controllers/reportAutomationController.js"></script>
+    <script src="~/js/src/components/dashboard/controllers/dashbaordCtrl.js"></script>
+    <script src="~/js/src/components/myprofile/controllers/myProfileController.js"></script>
+    <script src="~/js/src/components/mysettings/controllers/mySettingsController.js"></script>
+    <script src="~/js/src/components/myportals/controllers/myPortalsController.js"></script>
+    <script src="~/js/src/components/lockscreen/controllers/lockScreenController.js"></script>
+    <script src="~/js/src/components/logout/controllers/logoutController.js"></script>
+    <script src="~/js/src/components/systemhelp/controllers/systemHelpController.js"></script>
+
+    <script src="~/js/add.js"></script>
+    <script src="~/js/src/shared/services/settings.js"></script>
+    <script src="~/js/src/shared/services/SidebarService.js"></script>
+    <script src="~/js/src/shared/routes/route.js"></script>
+    <script src="~/js/src/shared/controllers/CfmMainController.js"></script>
+    <script src="~/js/src/shared/controllers/DashboardController.js"></script>
+    <script src="~/js/src/shared/controllers/IntroController.js"></script>
+    <script src="~/js/src/shared/controllers/HeaderController.js"></script>
+    <script src="~/js/src/shared/controllers/SidebarController.js"></script>
+    <script src="~/js/src/shared/controllers/QuickSidebarController.js"></script>
+    <script src="~/js/src/shared/controllers/ThemePanelController.js"></script>
+    <script src="/js/directives.js" type="text/javascript"></script>
+    <!-- END APP LEVEL ANGULARJS SCRIPTS -->
+    <!-- BEGIN APP LEVEL JQUERY SCRIPTS -->
+    <script src="/assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <script src="/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+    <script src="/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+    <!-- END APP LEVEL JQUERY SCRIPTS -->
+    <!-- END JAVASCRIPTS -->
+
+    @if (IsSectionDefined("appscripts"))
+    {
+        @RenderSection("appscripts")
+    }
+
+
+</body>
+<!-- END BODY -->
+
+</html>

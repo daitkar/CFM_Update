@@ -1,0 +1,32 @@
+﻿<ul >
+    <li ng-repeat="menu in menuData | orderBy:'position' | filter: {location: 'Quickbar'}">
+        <a href="#" target="_blank" class="">
+            <span>{{menu.Name}}</span>
+            <i class="{{menu.iconClass}}"></i> 
+        </a>
+    </li>
+    <!--<li>
+        <a href="#" target="_blank" class="active">
+            <span>Portal</span>
+            <i class="icon-home"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" target="_blank">
+            <span>System help</span>
+            <i class="icon-question"></i>
+        </a>
+    </li>
+    <li>
+        <a href="http://keenthemes.com/showcast/" target="_blank">
+            <span>Quick menu item 1</span>
+            <i class="icon-user"></i>
+        </a>
+    </li>
+    <li>
+        <a href="http://keenthemes.com/metronic-theme/changelog/" target="_blank">
+            <span>Quick menu item 2</span>
+            <i class="icon-graph"></i>
+        </a>
+    </li>-->
+</ul>

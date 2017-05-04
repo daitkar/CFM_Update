@@ -1,0 +1,53 @@
+﻿{
+  "notification": [
+    {
+      "time": "just now",
+      "class": "label-success",
+      "detail": "New user registered."
+
+    },
+    {
+      "time": "3 mins",
+      "class": "label-danger",
+      "detail": "Server #12 overloaded.."
+
+    },
+    {
+      "time": "10 mins",
+      "class": "label-warning",
+      "detail": "Server #2 not responding."
+
+    },
+    {
+      "time": "14 hrs",
+      "class": "label-info",
+      "detail": "Application error."
+
+    },
+    {
+      "time": "2 days",
+      "class": "label-danger",
+      "detail": "Database overloaded 68%."
+
+    },
+    {
+      "time": "3 days",
+      "class": "label-danger",
+      "detail": "A user IP blocked."
+
+    },
+    {
+      "time": "5 days",
+      "class": "label-info",
+      "detail": "System Error."
+    },
+    {
+      "time": "9 days",
+      "class": "label-info",
+      "detail": "Storage server failed."
+    }
+
+  ]
+
+
+}

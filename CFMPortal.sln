@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFMPortal", "CFMPortal\CFMPortal.csproj", "{36786673-D64D-419A-90DC-CAE083710DA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "group.cfm.core", "group.cfm.core\group.cfm.core.csproj", "{97496969-5D8C-44FB-970D-2BA33BBCC9B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "group.cfm.WebAPI", "group.cfm.WebAPI\group.cfm.WebAPI.csproj", "{1116DFD0-E63C-495C-AAF7-7EE39B5E22A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36786673-D64D-419A-90DC-CAE083710DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36786673-D64D-419A-90DC-CAE083710DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36786673-D64D-419A-90DC-CAE083710DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36786673-D64D-419A-90DC-CAE083710DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97496969-5D8C-44FB-970D-2BA33BBCC9B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97496969-5D8C-44FB-970D-2BA33BBCC9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97496969-5D8C-44FB-970D-2BA33BBCC9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97496969-5D8C-44FB-970D-2BA33BBCC9B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1116DFD0-E63C-495C-AAF7-7EE39B5E22A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1116DFD0-E63C-495C-AAF7-7EE39B5E22A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1116DFD0-E63C-495C-AAF7-7EE39B5E22A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1116DFD0-E63C-495C-AAF7-7EE39B5E22A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

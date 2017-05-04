@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.BaseClasses = "page-header-fixed page-sidebar-closed-hide-logo page-on-load page-sidebar-fixed";
+    ViewBag.Controller = "cfmMain";
+    Layout = "~/Views/Shared/__LayoutBase.cshtml";
+}
+
+
+<div ng-spinner-bar class="page-spinner-bar">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
+<!-- END PAGE SPINNER -->
+<!-- BEGIN HEADER -->
+<div data-ng-controller="HeaderController" class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="page-header-inner">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            <a ui-sref="dashboard">
+                <img src="{{settings.layoutPath}}/img/logo.png" alt="logo" class="logo-default" />
+            </a>
+            <div class="menu-toggler sidebar-toggler">
+                <span></span>
+                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+            </div>
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN HEADER SEARCH BOX -->
+        <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
+        <form class="search-form hide" action="#" method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search..." name="query">
+                <span class="input-group-btn">
+                    <a href="javascript:;" class="btn submit">
+                        <i class="icon-magnifier"></i>
+                    </a>
+                </span>
+            </div>
+        </form>
+        <!-- END HEADER SEARCH BOX -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            <span></span>
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li data-ng-include="'/js/src/core/notification/templates/notification.html'" data-ng-controller="notification" class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar"></li>
+
+                <!-- END NOTIFICATION DROPDOWN -->
+                <!-- BEGIN LANGUAGE BAR -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-language ">
+                    <a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
+                        <img alt="" src="../assets/global/img/flags/us.png">
+                        <span class="langname"> EN </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li class="active">
+                            <a href="#">
+                                <img alt="" src="{{settings.globalPath}}/img/flags/us.png"> English
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img alt="" src="{{settings.globalPath}}/img/flags/de.png"> German
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img alt="" src="{{settings.globalPath}}/img/flags/ru.png"> Russian
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img alt="" src="{{settings.globalPath}}/img/flags/fr.png"> French
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END LANGUAGE BAR -->
+                <li class="dropdown dropdown-user" data-ng-include="'/js/src/core/menu/templates/topmenu.html'" data-ng-controller="MenuController"></li>
+
+                    <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-quick-sidebar-toggler">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <i class="icon-logout"></i>
+                    </a>
+                </li>
+                <li>
+                    <oauth2 id="oath2" authorization-url="{{mainURL}}identity/connect/authorize"
+                            sign-out-url="{{mainURL}}identity/connect/endsession"
+                            sign-out-append-token="false"
+                            sign-out-redirect-url="{{currentHost}}"
+                            client-id="CFMPORTAL"
+                            redirect-url="{{currentHost}}"
+                            silent-token-redirect-url="{{mainURL}}#/silent-renew"
+                            response-type="id_token token"
+                            scope="openid security_api"
+                            style="display:none"
+                            on-initialized="initialized()"
+                            auto-generate-nonce="true">
+                    </oauth2>
+                </li>
+
+                <!-- END QUICK SIDEBAR TOGGLER -->
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix"> </div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <div data-ng-include="'/js/src/components/home/templates/home.html'" data-ng-controller="HomeController"> </div>
+    <div data-ng-include="'/js/src/components/datacollection/templates/datacollection.html'" data-ng-controller="DataCollectionCtrl"> </div>
+    <div data-ng-include="'/js/src/components/dashboard/templates/dashbaord.html'" data-ng-controller="DashbaordCtrl"> </div>
+    <div data-ng-include="'/js/src/components/marketing/templates/marketing.html'" data-ng-controller="MarketingController"> </div>
+    <div data-ng-include="'/js/src/components/reportautomation/templates/reportautomation.html'" data-ng-controller="ReportAutomationController"> </div>
+    <div data-ng-include="'/js/src/components/myprofile/templates/myprofile.html'" data-ng-controller="MyProfileController"> </div>
+    <div data-ng-include="'/js/src/components/mysettings/templates/mysettings.html'" data-ng-controller="MySettingsController"> </div>
+    <div data-ng-include="'/js/src/components/myportals/templates/myportals.html'" data-ng-controller="MyPortalsController"> </div>
+    <div data-ng-include="'/js/src/components/lockscreen/templates/lockscreen.html'" data-ng-controller="LockScreenController"> </div>
+    <div data-ng-include="'/js/src/components/logout/templates/logout.html'" data-ng-controller="LogoutController"> </div>
+    <div data-ng-include="'/js/src/components/systemhelp/templates/systemhelp.html'" data-ng-controller="SystemHelpController"> </div>
+    <div data-ng-include="'/js/src/core/menu/templates/leftmenu.html'" data-ng-controller="MenuController"> </div>
+    <!-- END SIDEBAR -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <!-- BEGIN STYLE CUSTOMIZER(optional) -->
+            <div data-ng-include="'/templates/structure/theme-panel.html'" data-ng-controller="ThemePanelController" class="theme-panel hidden-xs hidden-sm"> </div>
+            <!-- END STYLE CUSTOMIZER -->
+            <!-- BEGIN ACTUAL CONTENT -->
+            <div ui-view class="fade-in-up"> </div>
+            <!-- END ACTUAL CONTENT -->
+        </div>
+    </div>
+    <!-- END CONTENT -->
+    <!-- BEGIN QUICK SIDEBAR -->
+    <a href="javascript:;" class="page-quick-sidebar-toggler">
+        <i class="icon-login"></i>
+    </a>
+    <div data-ng-include="'/templates/structure/quick-sidebar.html'" data-ng-controller="QuickSidebarController" class="page-quick-sidebar-wrapper"></div>
+    <!-- END QUICK SIDEBAR -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN QUICK NAV -->
+<nav class="quick-nav">
+    <a class="quick-nav-trigger" href="#">
+        <span aria-hidden="true"></span>
+    </a>
+    <ul data-ng-include="'/js/src/core/menu/templates/quickmenu.html'" data-ng-controller="MenuController" style="padding-top:0px;"></ul>
+    <span aria-hidden="true" class="quick-nav-bg"></span>
+</nav>
+<div class="quick-nav-overlay"></div>
+<!-- END QUICK NAV -->
+
+
+

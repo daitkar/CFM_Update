@@ -1,0 +1,26 @@
+﻿body {
+    background-color:lightgray;
+}
+
+.registerform { margin-top: 100px;}
+
+.form-inline .form-group {
+ width: 100%;
+ background-color:inherit; 
+ margin-bottom: 5px;
+}
+
+.form-horizontal .form-group.form-md-line-input {
+ margin-bottom: 5px !important;
+}
+.form-inline .form-group input {
+    width: auto;
+}
+
+.red { color:red !important; }
+.green { color:green !important; }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+.registerform { margin-top: 0px;}
+}
+
